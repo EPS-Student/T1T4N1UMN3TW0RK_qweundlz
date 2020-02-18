@@ -1,24 +1,23 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "hash": "596b08a3d96f8b15d4c304e23482d17c",
-    "content-hash": "c89b3a559778949931337433887d140b",
+    "content-hash": "fdfbf6caace1f80ae1be95037659b02f",
     "packages": [
         {
             "name": "athlon1600/php-proxy",
-            "version": "v5.1.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Athlon1600/php-proxy.git",
-                "reference": "09ae057d3651087664401b7754624bd8cd8cf472"
+                "url": "https://github.com/titaniumnetwork-dev/php-proxy.git",
+                "reference": "580be299a95e8b83d8e7e0b85c5cd906a4a015d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Athlon1600/php-proxy/zipball/09ae057d3651087664401b7754624bd8cd8cf472",
-                "reference": "09ae057d3651087664401b7754624bd8cd8cf472",
+                "url": "https://api.github.com/repos/titaniumnetwork-dev/php-proxy/zipball/580be299a95e8b83d8e7e0b85c5cd906a4a015d8",
+                "reference": "580be299a95e8b83d8e7e0b85c5cd906a4a015d8",
                 "shasum": ""
             },
             "require": {
@@ -36,7 +35,6 @@
                     "src/helpers.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -48,7 +46,10 @@
                 "proxy script",
                 "web proxy"
             ],
-            "time": "2017-12-25 20:05:11"
+            "support": {
+                "source": "https://github.com/titaniumnetwork-dev/php-proxy/tree/master"
+            },
+            "time": "2018-03-25T20:31:14+00:00"
         },
         {
             "name": "athlon1600/php-proxy-plugin-bundle",
@@ -56,12 +57,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Athlon1600/php-proxy-plugin-bundle.git",
-                "reference": "575232e4abfbf5933dd15e33c2089ebb22c09c53"
+                "reference": "41a52e6a6ca8611c39c3a90ced34e2e6dcf764d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Athlon1600/php-proxy-plugin-bundle/zipball/575232e4abfbf5933dd15e33c2089ebb22c09c53",
-                "reference": "575232e4abfbf5933dd15e33c2089ebb22c09c53",
+                "url": "https://api.github.com/repos/Athlon1600/php-proxy-plugin-bundle/zipball/41a52e6a6ca8611c39c3a90ced34e2e6dcf764d1",
+                "reference": "41a52e6a6ca8611c39c3a90ced34e2e6dcf764d1",
                 "shasum": ""
             },
             "require": {
@@ -81,7 +82,7 @@
                 "MIT"
             ],
             "description": "A collection of useful plugins to be used with php-proxy",
-            "time": "2018-02-24 03:33:10"
+            "time": "2019-08-13T01:30:40+00:00"
         },
         {
             "name": "athlon1600/youtube-downloader",
@@ -116,17 +117,23 @@
                 "download youtube videos",
                 "youtube downloader"
             ],
-            "time": "2017-02-26 19:17:47"
+            "time": "2017-02-26T19:17:47+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "athlon1600/php-proxy": 20,
         "athlon1600/php-proxy-plugin-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "ext-mbstring": "^7.2",
+        "ext-gd": "^7.2",
+        "ext-sqlite3": "^7.2",
+        "ext-imagick": "*"
+    },
     "platform-dev": []
 }
