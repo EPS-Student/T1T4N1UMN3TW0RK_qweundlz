@@ -53,18 +53,6 @@ if (!@$_GET["cdURL"]) { //Only run if no URL has been submitted
         echo "<br><input style='margin-top: 20px;' type='submit' name='updateSettings' value='Update Settings'><form action='".cdURL."' method='POST'><input style='margin-left: 5px;' type='submit' value='Reset' name='resetSettings'></form></form>";
 
         $file = $proxy->parseLogFile(date("d-m-Y").".txt"); //Parse log file of current date format
-        echo "<hr><h3>Pages Viewed Today (Total - ".count($file)." By ".count($proxy->sortParsedLogFile($file, "IP"))." Users):</h3>";
-
-        if (count($views = $proxy->sortParsedLogFile($file, "URL"))>0) {
-            echo "<table><thead><td><b>Website</b></td><td><b>View Count</b></td></thead>"; //Table title
-            foreach($views as $URL => $logs)  {
-                echo "<tr><td style='padding-right: 80px;'>".$URL."</td><td>".count($logs)."</td></tr>"; //Table row for each parsed log
-            }
-            echo "</table>";
-        }
-        else {
-            echo "<p>No pages have been viewed yet today!</p>"; //No logs in file so just display generic message
-        }
 
         if (file_exists($proxy->cookieDIR)) {
             echo "<hr><h3>Cookie File - <a href='?clearCookies'>[Delete File]</a>:</h3>"; //Option to delete file
