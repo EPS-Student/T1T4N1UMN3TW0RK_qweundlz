@@ -1,14 +1,14 @@
 <?php
 define('DS', DIRECTORY_SEPARATOR); //Short hand DIR separator value
 define('BASE_DIRECTORY', dirname(@get_included_files()[count(get_included_files())-2]).DS); //Compile base DIR for use by script
-define('searchp', (empty($_SERVER['HTTPS']) || strtolower($_SERVER['HTTPS']) == 'off' ? "http" : "https")."://".$_SERVER['HTTP_HOST'].explode('?', $_SERVER['REQUEST_URI'])[0]); //Compile proxy URL base for use by script
+define('cdURL', (empty($_SERVER['HTTPS']) || strtolower($_SERVER['HTTPS']) == 'off' ? "http" : "https")."://".$_SERVER['HTTP_HOST'].explode('?', $_SERVER['REQUEST_URI'])[0]); //Compile proxy URL base for use by script
 if (count(explode("&", $q=$_SERVER['QUERY_STRING']))>count($_GET)) { $_GET = array(); parse_str($q, $_GET); }
 
 class censorDodge {
     public $version = "1.82 BETA";
     public $cookieDIR, $isSSL = "";
     private $URL, $responseHeaders, $HTTP, $getParam, $logToFile, $preventHotlinking, $miniForm = "";
-    private $blacklistedWebsites = array("localhost", "127.0.0.1", searchp);
+    private $blacklistedWebsites = array("localhost", "127.0.0.1", cdURL);
     private $blacklistedIPs = array();
     private static $pluginFunctions = array();
 
@@ -49,12 +49,12 @@ class censorDodge {
             $this->URL = $this->modifyURL($URL); //Fix any formatting issues with the URL so it is resolvable
         }
 #this is the injected button over every webpage!
-        $form = "<div id='miniForm' style='z-index: 9999999999; position: fixed; right:15px; top:10px;'><form style='display:inline;' onsubmit='goToPage();' id='miniFormBoxes' action='".searchp."'><input type='text' autocomplete=\"off\" style='all:initial; background:#fff; border:1px solid #a9a9a9; padding:3px;border-radius:2px;' placeholder='URL' value='' name='searchp'>
+        $form = "<div id='miniForm' style='z-index: 9999999999; position: fixed; right:15px; top:10px;'><form style='display:inline;' onsubmit='goToPage();' id='miniFormBoxes' action='".cdURL."'><input type='text' autocomplete=\"off\" style='all:initial; background:#fff; border:1px solid #a9a9a9; padding:3px;border-radius:2px;' placeholder='URL' value='' name='cdURL'>
              
             <input type='submit' style='all:initial; cursor:pointer; margin-left:5px; margin-right:5px; border-radius:2px;background:#fff; border:1px solid #989898; padding:3px; background: linear-gradient(to bottom, #f6f6f6 0%,#dedede 100%);' value='Go!'></form>
             
             <span id='toggle' style='all:initial; cursor:pointer; display:none; background:#fff; border:1px solid #ccc; border-radius:7px; padding:5px 10px 5px 10px;' onclick=\"var box = document.getElementById('miniFormBoxes'); if (box.style.display=='none') { box.style.display = 'inline'; this.innerHTML = 'X'; } else { box.style.display = 'none'; this.innerHTML = '+'; }\">+</span></div>";
-        $form .= "<script>function goToPage() { event.preventDefault(); if (document.getElementsByName('searchp')[0].value!='') { var val = document.getElementsByName(\"searchp\")[0].value; window.location = '?searchp=' + ".($this->encryptURLs ? 'btoa(val)' : 'escape(val)')."; } } document.getElementById('miniFormBoxes').style.display = 'none'; document.getElementById('toggle').style.display = 'inline-block';</script>";
+        $form .= "<script>function goToPage() { event.preventDefault(); if (document.getElementsByName('cdURL')[0].value!='') { var val = document.getElementsByName(\"cdURL\")[0].value; window.location = '?cdURL=' + ".($this->encryptURLs ? 'btoa(val)' : 'escape(val)')."; } } document.getElementById('miniFormBoxes').style.display = 'none'; document.getElementById('toggle').style.display = 'inline-block';</script>";
         $this->addMiniFormCode($form);
 
         //Load plugins for running functions when ready
@@ -147,21 +147,21 @@ class censorDodge {
     }
 
     public function proxyURL($URL) {
-        $regex = preg_replace(array("~[a-z]+://~i", "~".basename($_SERVER['PHP_SELF'])."~i"),array("(http(s|)://|)", "(".basename($_SERVER['PHP_SELF'])."|)"),searchp)."\?.*?=";
+        $regex = preg_replace(array("~[a-z]+://~i", "~".basename($_SERVER['PHP_SELF'])."~i"),array("(http(s|)://|)", "(".basename($_SERVER['PHP_SELF'])."|)"),cdURL)."\?.*?=";
         if (!empty($URL) && !preg_match("~".$regex."~i",$URL)) {
             parse_str($anchor = parse_url($URL,PHP_URL_FRAGMENT), $parseFrag); //Find anchors if any are in original URL
             if ($anchor && count($parseFrag)<=1) { $anchor = "#".$anchor; $URL = str_replace($anchor,"",$URL); } else { $anchor = ""; }
 
             //Recompile the new proxy URL with anchors if available
             if ($this->encryptURLs) { $URL = base64_encode($URL); } else { $URL = rawurlencode($URL); }
-            $URL = searchp."?".(empty($this->getParam) ? "URL" : $this->getParam)."=".$URL.$anchor;
+            $URL = cdURL."?".(empty($this->getParam) ? "URL" : $this->getParam)."=".$URL.$anchor;
         }
 
         return $URL; //Return compiled proxy URL
     }
 
     public function unProxyURL($URL) {
-        $regex = preg_replace(array("~[a-z]+://~i", "~".basename($_SERVER['PHP_SELF'])."~i"),array("(http(s|)://|)", "(".basename($_SERVER['PHP_SELF'])."|)"),searchp)."\?.*?=";
+        $regex = preg_replace(array("~[a-z]+://~i", "~".basename($_SERVER['PHP_SELF'])."~i"),array("(http(s|)://|)", "(".basename($_SERVER['PHP_SELF'])."|)"),cdURL)."\?.*?=";
         if (!empty($URL) && preg_match("~".$regex."~i",$URL)) {
             $URL = preg_replace("~".$regex."~i", "", $URL); //Remove everything from the URL except the GET param value
             for ($e=$URL; strlen($e)>0; $e=substr($e,0,strlen($e)-1)) {
@@ -282,7 +282,7 @@ class censorDodge {
         if (!empty($this->URL)) {
             $page = ""; $this->callAction("preRequest", array(&$page,&$this->URL,$this)); //Run preRequest function for plugins
             if ($this->preventHotlinking) { if (!($i=isset($_SESSION))) { session_start(); } $hl = substr(md5("cdHotlink"),0,20); $h = parse_url(@$_SERVER["HTTP_REFERER"], PHP_URL_HOST);  //Run some basic detection to help block hotlinking
-		if (@$_SESSION[$hl]!=true && $h!=parse_url(searchp, PHP_URL_HOST)) { throw new Exception("The use of hotlinking is strictly forbidden on this server!"); } else { $_SESSION[$hl] = true; } if (!$i) { session_destroy(); } else { session_write_close(); } }
+		if (@$_SESSION[$hl]!=true && $h!=parse_url(cdURL, PHP_URL_HOST)) { throw new Exception("The use of hotlinking is strictly forbidden on this server!"); } else { $_SESSION[$hl] = true; } if (!$i) { session_destroy(); } else { session_write_close(); } }
 
             if ($this->allowCookies) { $this->createCookieDIR(); } //If cookies are enabled create the directory
             $return = $this->curlRequest($this->URL, $_GET, $_POST); //Run the cURL function to get the page for parsing
@@ -670,7 +670,7 @@ class censorDodge {
 
         //Set user agent, referrer, cookies and post parameters based on 'virtual' browser values
         if (!is_null($this->customUserAgent)) { curl_setopt($curl, CURLOPT_USERAGENT, $this->customUserAgent); } else { curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']); }
-        if (!is_null($this->customReferrer)) { curl_setopt($curl, CURLOPT_REFERER, $this->customReferrer); } else { curl_setopt($curl, CURLOPT_REFERER, (!preg_match("~".preg_replace(array("~[a-z]+://~i", "~".basename($_SERVER['PHP_SELF'])."~i"), array("(http(s|)://|)", "(".basename($_SERVER['PHP_SELF'])."|)"), searchp)."~is", $r = $this->unProxyURL(@$_SERVER["HTTP_REFERER"]))) ? $r : "" ); }
+        if (!is_null($this->customReferrer)) { curl_setopt($curl, CURLOPT_REFERER, $this->customReferrer); } else { curl_setopt($curl, CURLOPT_REFERER, (!preg_match("~".preg_replace(array("~[a-z]+://~i", "~".basename($_SERVER['PHP_SELF'])."~i"), array("(http(s|)://|)", "(".basename($_SERVER['PHP_SELF'])."|)"), cdURL)."~is", $r = $this->unProxyURL(@$_SERVER["HTTP_REFERER"]))) ? $r : "" ); }
         if ($this->allowCookies) { $cookies = $_COOKIE; unset($cookies["PHPSESSID"]); $cs = ""; foreach( $cookies as $key => $value ) {  if (!is_array($value)) { $cs .= "$key=".$value."; "; } } curl_setopt($curl, CURLOPT_COOKIE, $cs); curl_setopt($curl, CURLOPT_COOKIEFILE, $this->cookieDIR); curl_setopt($curl, CURLOPT_COOKIEJAR, $this->cookieDIR); } //Set cookie file in cURL
         foreach ($_FILES as $upload => $files) { for ($i=0; $i<count($files["name"]); $i++) { if ($files["error"][$i]==false) { $name = $upload.(count($files["name"])>1 ? "[$i]" : ""); $postParameters[$name] = new CURLFile($files["tmp_name"][$i], $files["type"][$i], $files["name"][$i]); } } } //Parse any uploaded files into the POST values for submission
         if (count($postParameters)>0) { curl_setopt($curl, CURLOPT_POST, true); curl_setopt($curl, CURLOPT_POSTFIELDS, (count($_FILES)>0 ? $postParameters : http_build_query($postParameters))); } //Send POST values using cURL

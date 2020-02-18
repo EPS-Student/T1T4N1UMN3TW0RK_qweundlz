@@ -1,11 +1,11 @@
 <?php
 session_start(); //Start session for settings of proxy to be stored and recovered
 require("includes/class.censorDodge.php"); //Load censorDodge class
-$proxy = new censorDodge(@$_GET["searchp"], true, true); //Instantiate censorDodge class
+$proxy = new censorDodge(@$_GET["cdURL"], true, true); //Instantiate censorDodge class
 
 //Clear cookies and resetting settings session
-if (isset($_GET["clearCookies"])) { $proxy->clearCookies(); echo '<meta http-equiv="refresh" content="0; url='.searchp.'">'; }
-if (isset($_POST["resetSettings"])) { unset($_SESSION["settings"]); echo '<meta http-equiv="refresh" content="0; url='.searchp.'">'; }
+if (isset($_GET["clearCookies"])) { $proxy->clearCookies(); echo '<meta http-equiv="refresh" content="0; url='.cdURL.'">'; }
+if (isset($_POST["resetSettings"])) { unset($_SESSION["settings"]); echo '<meta http-equiv="refresh" content="0; url='.cdURL.'">'; }
 
 $settings = $proxy->getProxySettings(); //Get all settings (plugins included) that are user intractable
 
@@ -18,7 +18,7 @@ if (isset($_POST["updateSettings"])) {
         }
     }
 
-    echo '<meta http-equiv="refresh" content="0; url='.searchp.'">'; //Reload page using META redirect
+    echo '<meta http-equiv="refresh" content="0; url='.cdURL.'">'; //Reload page using META redirect
 }
 else {
     foreach ($settings as $setting) {
@@ -33,24 +33,24 @@ $templates = array(); foreach(glob(BASE_DIRECTORY."plugins".DS."{**/*,*}",GLOB_B
 if (@$templates["error"]) { set_exception_handler(function($e) use ($proxy,$settings,$templates) { if ($errorString=$e->getMessage()) { include("".$templates["error"].""); }}); }
 if (@$templates["miniForm"]) { ob_start(); include("".$templates["miniForm"].""); $output = ob_get_contents(); ob_end_clean(); $proxy->addMiniFormCode($output); }
 
-if (!@$_GET["searchp"]) { //Only run if no URL has been submitted
+if (!@$_GET["cdURL"]) { //Only run if no URL has been submitted
     if (!@$templates["home"]) {
         echo "<html><head><title>".ucfirst(strtolower($_SERVER['SERVER_NAME']))." - Censor Dodge ".$proxy->version."</title></head><body>"; //Basic title
 
         //Basic submission form with base64 encryption support
         echo "
-        <script>function goToPage() { event.preventDefault(); var URL = document.getElementsByName('searchp')[0].value; if (URL!='') { window.location = '?searchp=' + ".($proxy->encryptURLs ? 'btoa(URL)' : 'URL')."; } }</script>
+        <script>function goToPage() { event.preventDefault(); var URL = document.getElementsByName('cdURL')[0].value; if (URL!='') { window.location = '?cdURL=' + ".($proxy->encryptURLs ? 'btoa(URL)' : 'URL')."; } }</script>
         <h2>Welcome to <a target='_blank' style='color:#000 !important;' href='https://www.censordodge.com/'>Censor Dodge ".$proxy->version."</a></h2>
         <form action='#' method='GET' onsubmit='goToPage();'>
-            <input type='text' size='30' name='searchp' placeholder='URL' required>
+            <input type='text' size='30' name='cdURL' placeholder='URL' required>
             <input type='submit' value='Go!'>
         </form>";
 
-        echo "<hr><h3>Proxy Settings:</h3><form action='".searchp."' method='POST'>";
+        echo "<hr><h3>Proxy Settings:</h3><form action='".cdURL."' method='POST'>";
         foreach($settings as $name => $setting) { //Toggle option for setting listed in array, completely dynamic
             echo '<span style="padding-right:20px;"><input type="checkbox" '.($proxy->{$setting[0]} ? "checked" : "") .' name="'.$setting[0].'" value="'.$setting[1].'"> '.$name."</span>";
         }
-        echo "<br><input style='margin-top: 20px;' type='submit' name='updateSettings' value='Update Settings'><form action='".searchp."' method='POST'><input style='margin-left: 5px;' type='submit' value='Reset' name='resetSettings'></form></form>";
+        echo "<br><input style='margin-top: 20px;' type='submit' name='updateSettings' value='Update Settings'><form action='".cdURL."' method='POST'><input style='margin-left: 5px;' type='submit' value='Reset' name='resetSettings'></form></form>";
 
         $file = $proxy->parseLogFile(date("d-m-Y").".txt"); //Parse log file of current date format
 
