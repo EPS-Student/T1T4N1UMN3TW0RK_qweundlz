@@ -40,7 +40,7 @@ if (!@$_GET["searchp"]) { //Only run if no URL has been submitted
         //Basic submission form with base64 encryption support
         echo "
         <script>function goToPage() { event.preventDefault(); var URL = document.getElementsByName('searchp')[0].value; if (URL!='') { window.location = '?searchp=' + ".($proxy->encryptURLs ? 'btoa(URL)' : 'URL')."; } }</script>
-        <h2>Welcome to <a target='_blank' style='color:#000 !important;' href='https://www.censordodge.com/'>Censor Dodge ".$proxy->version." - qweundz Edition</a></h2>
+        <h2>Welcome to <a target='_blank' style='color:#000 !important;' href='https://www.censordodge.com/'>Censor Dodge ".$proxy->version." - LEMON LEMON LEMON Edition</a></h2>
         <form action='#' method='GET' onsubmit='goToPage();'>
             <input type='text' size='30' name='searchp' placeholder='URL' required>
             <input type='submit' value='Go!'>
