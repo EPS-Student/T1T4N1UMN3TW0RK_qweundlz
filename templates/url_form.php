@@ -5,7 +5,7 @@
 <style type="text/css">
 
 html body {
-	margin-top: 50px !important;
+	margin-top: 0px;
 }
 
 #top_form {
@@ -22,19 +22,19 @@ html body {
 	-webkit-user-select: none;
 	-o-user-select: none;
 
-	border-bottom:1px solid #151515;
+	border-bottom:0px solid #151515;
 
     background:gray;
 
-	height:37px;
-	line-height:35px;
+	height:0px;
+	line-height:0px;
 }
 
 #top_form input[name=url] {
-	width: 550px;
-	height: 20px;
-	padding: 5px;
-	font: 13px "Helvetica Neue",Helvetica,Arial,sans-serif;
+	width: 0px;
+	height: 0px;
+	padding: 0px;
+	font: 0px "Helvetica Neue",Helvetica,Arial,sans-serif;
 	border: 0px none;
 	background: none repeat scroll 0% 0% #FFF;
 }
@@ -64,7 +64,7 @@ function smart_select(ele){
 
 <div id="top_form">
 
-	<div style="width:800px; margin:0 auto;">
+	<div style="width:0px; margin:0 auto;">
 	
 		<form method="post" action="index.php" target="_top" style="margin:0; padding:0;">
 			<input type="button" value="Home" onclick="window.location.href='local-2.html'">
