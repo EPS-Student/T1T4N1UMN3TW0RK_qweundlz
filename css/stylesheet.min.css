@@ -23,11 +23,11 @@ body {
 }
 
 ::selection {
-    background: purple
+    background: #00cd00
 }
 
 ::-moz-selection {
-    background: purple
+    background: #00cd00
 }
 
 .container {
@@ -62,7 +62,7 @@ ul {
     position: fixed;
     width: 100%;
     z-index: 1;
-    border-bottom: #0000cd 3px solid
+    border-bottom: #00cd00 3px solid
 }
 
 .header ul {
@@ -75,16 +75,16 @@ ul {
 .header li a {
     display: block;
     padding: 20px 20px;
-    border-right: 3px solid #0000cd;
+    border-right: 3px solid #00cd00;
     text-decoration: none
 }
 
 .header .menu-btn:hover,.header li a:hover {
-    background-color: Navy
+    background-color: Green
 }
 
 .current a {
-    background-color: #0000cd
+    background-color: #00cd00
 }
 
 .header .logo {
@@ -188,7 +188,7 @@ footer {
     background-color: rgba(0,0,0,.7);
     text-align: center;
     bottom: 0;
-    border-top: #0000cd 3px solid;
+    border-top: #00cd00 3px solid;
     position: fixed;
     width: 100%;
     margin-left: -10%
@@ -197,7 +197,7 @@ footer {
 .button_slide {
     outline: 0;
     color: #fff;
-    border: 2px solid #0000cd;
+    border: 2px solid #00cd00;
     border-radius: .9em;
     padding: 18px 36px;
     display: inline-flex;
@@ -206,7 +206,7 @@ footer {
     letter-spacing: 1px;
     cursor: pointer;
     background: rgba(0,0,0,.4);
-    box-shadow: inset 0 0 0 0 #0000cd;
+    box-shadow: inset 0 0 0 0 #00cd00;
     -webkit-transition: ease-out .4s;
     -moz-transition: ease-out .4s;
     transition: ease-out .4s;
@@ -216,19 +216,19 @@ footer {
 }
 
 .slide_down:hover {
-    box-shadow: inset 0 100px 0 0 Navy
+    box-shadow: inset 0 100px 0 0 Green
 }
 
 .slide_right:hover {
-    box-shadow: inset 400px 0 0 0 Navy
+    box-shadow: inset 400px 0 0 0 Green
 }
 
 .slide_left:hover {
-    box-shadow: inset 0 0 0 50px Navy
+    box-shadow: inset 0 0 0 50px Green
 }
 
 .slide_diagonal:hover {
-    box-shadow: inset 400px 50px 0 0 Navy
+    box-shadow: inset 400px 50px 0 0 Green
 }
 
 #outer {
@@ -266,10 +266,10 @@ a {
     font-family: Roboto,sans-serif;
     position: relative;
     padding: 20px 40px;
-    border-top: #0000cd 3px solid;
-    border-bottom: #0000cd 3px solid;
-    border-left: #0000cd 3px solid;
-    border-right: #0000cd 3px solid;
+    border-top: #00cd00 3px solid;
+    border-bottom: #00cd00 3px solid;
+    border-left: #00cd00 3px solid;
+    border-right: #00cd00 3px solid;
     background: rgba(0,0,0,.8);
     -webkit-box-shadow: 1px 2px 3px #000;
     -moz-box-shadow: 1px 2px 3px #111;
@@ -311,10 +311,10 @@ a {
     position: relative;
     padding: 20px 40px;
     background: rgba(50,50,50,.4);
-    border-top: #0000cd 3px solid;
-    border-bottom: #0000cd 3px solid;
-    border-left: #0000cd 3px solid;
-    border-right: #0000cd 3px solid;
+    border-top: #00cd00 3px solid;
+    border-bottom: #00cd00 3px solid;
+    border-left: #00cd00 3px solid;
+    border-right: #00cd00 3px solid;
     -webkit-box-shadow: 1px 2px 3px #000;
     -moz-box-shadow: 1px 2px 3px #111;
     box-shadow: 1px 2px 3px #1d1d1d;
