@@ -16,11 +16,17 @@ a=document.getElementsByTagName("body")[0],
 a.appendChild(b)})).call(this)
 
 
-To close the Porta Proxy, create another bookmark with this code:
 
+To close the Porta Proxy, create another bookmark with this code:
 
 javascript: var element = document.getElementById("rustic-model"); element.parentNode.removeChild(element);
 
+
+
+To toggle the Porta Proxy's visibility, use this code:
+
+javascript:((function(){var a=document.getElementById("rustic-model");if(a.style.display==="none")
+{a.style.display="block";}else{a.style.display="none";}})).call(this)
 
 
 
