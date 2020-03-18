@@ -75,7 +75,7 @@ ul {
 .header li a {
     display: block;
     padding: 20px 20px;
-    border-right: 3px solid #00cd00;
+    border-right: 0px solid #00cd00;
     text-decoration: none
 }
 
