@@ -1,4 +1,4 @@
--=< Inspect Element Clone >=-
+-=< Inspect Element >=-
 
 
 A very limited way to edit elements of a site you're on if Inspect Element is blocked

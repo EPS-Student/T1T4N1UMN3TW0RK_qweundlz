@@ -23,11 +23,11 @@ body {
 }
 
 ::selection {
-    background: #00cd00
+    background: royalblue
 }
 
 ::-moz-selection {
-    background: #00cd00
+    background: royalblue
 }
 
 .container {

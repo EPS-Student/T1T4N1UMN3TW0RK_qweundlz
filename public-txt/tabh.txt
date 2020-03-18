@@ -8,7 +8,6 @@ javascript:window.onbeforeunload = function() { return true;};
 
 
 
-When a teacher attempts to close a tab with this script running,
-a message will pop up on your screen saying that changes might
-be lost if you leave the site without saving. You can hit cancel
-(keep tab open) or leave (close tab).
+When a teacher attempts to close a tab with this script running, a message will
+pop up on your screen saying that changes might be lost if you leave the
+site without saving. You can hit cancel (keep tab open) or leave (close tab).

@@ -1,4 +1,4 @@
--=< Tab Disguise >=-
+-=< Tab Cloak >=-
 
 
 Disguises the icon and name of the tab you're on with the icon and name given in the code
