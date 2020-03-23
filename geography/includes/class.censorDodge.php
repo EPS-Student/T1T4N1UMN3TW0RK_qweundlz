@@ -49,12 +49,12 @@ class censorDodge {
             $this->URL = $this->modifyURL($URL); //Fix any formatting issues with the URL so it is resolvable
         }
 #this is the injected button over every webpage!
-        $form = "<div id='miniForm' style='z-index: 9999999999; position: fixed; right:15px; top:10px;'><form style='display:inline;' onsubmit='goToPage();' id='miniFormBoxes' action='".searchp."'><input type='text' autocomplete=\"off\" style='all:initial; background:#fff; border:1px solid #a9a9a9; padding:3px;border-radius:2px;' placeholder='URL' value='' name='searchp'>
+        $form = "<div id='miniForm' style='display:none;'><form style='display:none;' onsubmit='goToPage();' id='miniFormBoxes' action='".searchp."'><input type='text' autocomplete=\"off\" style='display:none;' placeholder='URL' value='' name='searchp'>
              
-            <input type='submit' style='all:initial; cursor:pointer; margin-left:5px; margin-right:5px; border-radius:2px;background:#fff; border:1px solid #989898; padding:3px; background: linear-gradient(to bottom, #f6f6f6 0%,#dedede 100%);' value='Go!'></form>
+            <input type='submit' style='display:none;' value='Go!'></form>
             
-            <span id='toggle' style='all:initial; cursor:pointer; display:none; background:#fff; border:1px solid #ccc; border-radius:7px; padding:5px 10px 5px 10px;' onclick=\"var box = document.getElementById('miniFormBoxes'); if (box.style.display=='none') { box.style.display = 'inline'; this.innerHTML = 'X'; } else { box.style.display = 'none'; this.innerHTML = '+'; }\">+</span></div>";
-        $form .= "<script>function goToPage() { event.preventDefault(); if (document.getElementsByName('searchp')[0].value!='') { var val = document.getElementsByName(\"searchp\")[0].value; window.location = '?searchp=' + ".($this->encryptURLs ? 'btoa(val)' : 'escape(val)')."; } } document.getElementById('miniFormBoxes').style.display = 'none'; document.getElementById('toggle').style.display = 'inline-block';</script>";
+            <span id='toggle' style='display:none;'>+</span></div>";
+        $form .= "<script>function goToPage() { event.preventDefault(); if (document.getElementsByName('searchp')[0].value!='') { var val = document.getElementsByName(\"searchp\")[0].value; window.location = '?searchp=' + ".($this->encryptURLs ? 'btoa(val)' : 'escape(val)')."; } } document.getElementById('miniFormBoxes').style.display = 'none';</script>";
         $this->addMiniFormCode($form);
 
         //Load plugins for running functions when ready
