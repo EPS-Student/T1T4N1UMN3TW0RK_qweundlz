@@ -23,11 +23,13 @@ body {
 }
 
 ::selection {
-    background: royalblue
+    background: royalblue;
+	color: white
 }
 
 ::-moz-selection {
-    background: royalblue
+    background: royalblue;
+	color: white
 }
 
 .container {
@@ -229,6 +231,11 @@ footer {
 
 .slide_diagonal:hover {
     box-shadow: inset 400px 50px 0 0 Green
+}
+
+.change_color:hover {
+	background: Green;
+    transition: background 0.2s ease-in;
 }
 
 #outer {
