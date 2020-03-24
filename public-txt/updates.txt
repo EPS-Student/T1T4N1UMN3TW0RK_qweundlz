@@ -1,0 +1,6 @@
+LEMON Complete list of updates since school let out in March.
+
+3/17/20 - We now have domains! (Still using heroku)
+
+3/21/20 - Node Unblocker should be more compatible now,
+          Updated Cookie Clicker

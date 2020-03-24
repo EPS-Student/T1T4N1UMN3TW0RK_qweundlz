@@ -12,43 +12,36 @@
       <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
       <ul class="menu">
         <li><a href="index.html">Home</a></li>
-        <li><a href="s2.html">Games</a></li>
-        <li><a href="s3.html">Movies</a></li>
+        <li><a href="p2.html">Games</a></li>
+        <li><a href="p3.html">Movies</a></li>
         <li><a href="about.html">About</a></li>
       </ul>
     </header>
       <div class="container">
       <div class="c-box mainbody">
       <center>
-        <h3>Local CensorDodge Proxy</h3>
+        <h3>Proxies</h3>
       </center>
       <center>
-        <table>
-        <tr>
-          <td>
-            <form action="" method="get" id="url" style="transform:scale(1.1)">
-                  <p>
-                    <input type="text" placeholder="Enter URL" style="border:none;border-radius: 5px;padding:10px;transform:scale(1.1)" id="url" name="url">&thinsp;
-                    <input type="submit" style="border:none;border-radius: 5px;padding:10px;width:40px;background:#704ea0;color:#fff;font-weight:bold" value="CD">&MediumSpace;
-                  </p>
-                </form>
-            </td>
-          <td>
-          <form action="index.php" method="post" style="transform:scale(1.1)">
-            <p>
-              <input type="submit" style="border:none;border-radius: 5px;padding:10px;width:40px;background:#704ea0;color:#fff;font-weight:bold" value="PP">&thinsp;
-            </p>
-          </form>
-          </td>
-          <td>
-          <form action="" method="get" id="nu" style="transform:scale(1.1)">
-            <p>
-              <input type="submit" style="border:none;border-radius: 5px;padding:10px;width:40px;background:#704ea0;color:#fff;font-weight:bold" value="NU">&thinsp;
-            </p>
-          </form>
-          </td>
-        </tr>
-        </table>
+        <form action="" method="get" style="transform:scale(1.1)">
+            <input name="url" type="text" placeholder="Enter URL" style="border:none;border-radius: 5px;padding:10px;" id="url" name="url">&nbsp;
+        </form>
+		
+		<form action="" method="get" id="cd" style="transform:scale(1.1)">
+            <input type="submit" style="border:none;border-radius: 5px;padding:10px;width:40px;background:#704ea0;color:#fff;font-weight:bold;" value="CD">&nbsp;
+        </form>
+		
+		<form action="" method="get" id="pp" style="transform:scale(1.1)">
+            <input type="submit" style="border:none;border-radius: 5px;padding:10px;width:40px;background:#704ea0;color:#fff;font-weight:bold;" value="PP">&nbsp;
+        </form>
+		
+		<form action="" method="get" id="n1" style="transform:scale(1.1)">
+            <input type="submit" style="border:none;border-radius: 5px;padding:10px;width:40px;background:#704ea0;color:#fff;font-weight:bold;" value="N1">&nbsp;
+        </form>
+		
+		<form action="" method="get" id="n2" style="transform:scale(1.1)">
+            <input type="submit" style="border:none;border-radius: 5px;padding:10px;width:40px;background:#704ea0;color:#fff;font-weight:bold;" value="N2">&nbsp;
+        </form>
       </center>
       <center>
         <h4>With this proxy you can:
@@ -72,15 +65,42 @@
         $('url').focus();
       }
     </script>
-
+	<script>
+      function $(id) {
+        return document.getElementById(id);
+      }
+      $('pp').onsubmit = function() {
+        var url = btoa($('url').value);
+        //this is the URL for the server
+        window.location.href = `index.php?q=${url}`;
+        return false;
+      };
+      window.onload = function() {
+        $('url').focus();
+      }
+    </script>
     <script>
       function $(id) {
         return document.getElementById(id);
       }
-      $('nu').onsubmit = function() {
+      $('n1').onsubmit = function() {
         var url = $('url').value;
         //this is the URL for the server
-        window.location.href = `https://alive-brand-contain.herokuapp.com/textbooks/${url}`;
+        window.location.href = `https://mundane-cube.cf/textbooks/${url}`;
+        return false;
+      };
+      window.onload = function() {
+        $('url').focus();
+      }
+  </script>
+  <script>
+      function $(id) {
+        return document.getElementById(id);
+      }
+      $('n2').onsubmit = function() {
+        var url = $('url').value;
+        //this is the URL for the server
+        window.location.href = `https://do-not-please.ga/textbooks/${url}`;
         return false;
       };
       window.onload = function() {
