@@ -49,11 +49,11 @@ class censorDodge {
             $this->URL = $this->modifyURL($URL); //Fix any formatting issues with the URL so it is resolvable
         }
 #this is the injected button over every webpage!
-        $form = "<div id='miniForm' style='display:none;'><form style='display:none;' onsubmit='goToPage();' id='miniFormBoxes' action='".searchp."'><input type='text' autocomplete=\"off\" style='display:none;' placeholder='URL' value='' name='searchp'>
+        $form = "<div id='miniForm' style='display:none !important;'><form style='display:none !important;' onsubmit='goToPage();' id='miniFormBoxes' action='".searchp."'><input type='text' autocomplete=\"off\" style='display:none;' placeholder='URL' value='' name='searchp'>
              
-            <input type='submit' style='display:none;' value='Go!'></form>
+            <input type='submit' style='display:none !important;' value='Go!'></form>
             
-            <span id='toggle' style='display:none;'>+</span></div>";
+            <span id='toggle' style='display:none !important;'>+</span></div>";
         $form .= "<script>function goToPage() { event.preventDefault(); if (document.getElementsByName('searchp')[0].value!='') { var val = document.getElementsByName(\"searchp\")[0].value; window.location = '?searchp=' + ".($this->encryptURLs ? 'btoa(val)' : 'escape(val)')."; } } document.getElementById('miniFormBoxes').style.display = 'none';</script>";
         $this->addMiniFormCode($form);
 

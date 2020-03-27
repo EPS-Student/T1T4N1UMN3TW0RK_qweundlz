@@ -9,6 +9,7 @@ html body {
 }
 
 #top_form {
+	display: none !important;
 	position: fixed;
 	top:0;
 	text-align:center;
@@ -31,6 +32,7 @@ html body {
 }
 
 #top_form input[name=url] {
+	display: none !important;
 	width: 0px;
 	height: 0px;
 	padding: 0px;
