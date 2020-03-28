@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 body:before {
     content: "";
     position: fixed;
@@ -5,17 +8,16 @@ body:before {
     right: 0;
     top: 0;
     bottom: 0;
-    background: linear-gradient(45deg,rgba(0,0,0,.62),rgba(0,0,0,.66) 90%);
+    background: linear-gradient(45deg,rgba(0,0,0,.62),rgba(0,0,0,.1) 90%);
     z-index: -1
 }
 
 body {
-    font: 15px/1.5 Arial,Helvetica,sans-serif;
+    font: 15px/1.5 'Roboto',Arial,Helvetica,sans-serif;
     padding: 0;
     margin: 0;
     background-color: #fff;
     color: #fff;
-    background: url(../img/wall1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -59,12 +61,12 @@ ul {
 }
 
 .header {
-    background-color: rgba(0,0,0,.7);
-    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+    font: 1.5em 'Roboto Condensed', sans-serif;
+    background-color: rgb(25,25,25);
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.4);
     position: fixed;
     width: 100%;
     z-index: 1;
-    border-bottom: #00cd00 3px solid
 }
 
 .header ul {
@@ -77,23 +79,30 @@ ul {
 .header li a {
     display: block;
     padding: 20px 20px;
-    border-right: 0px solid #00cd00;
     text-decoration: none
 }
 
 .header .menu-btn:hover,.header li a:hover {
-    background-color: Green
+    background-color: Green;
+    transition: background 0.1s ease-in;
 }
 
 .current a {
     background-color: #00cd00
 }
 
+.header .logoi {
+    width: 38px;
+    height: 38px;
+    vertical-align: -0.15em;
+    margin-left: 0.2em;
+}
+
 .header .logo {
     display: block;
     float: left;
-    font-size: 2em;
-    padding: 10px 20px;
+    font-size: 1.5em;
+    padding: 13px 9px;
     text-decoration: none
 }
 
@@ -270,7 +279,7 @@ a {
 }
 
 .c-box {
-    font-family: Roboto,sans-serif;
+    font-family: sans-serif;
     position: relative;
     padding: 20px 40px;
     border-top: #00cd00 3px solid;
@@ -314,7 +323,7 @@ a {
 }
 
 .d-box {
-    font-family: Roboto,sans-serif;
+    font-family: 'Roboto',sans-serif;
     position: relative;
     padding: 20px 40px;
     background: rgba(50,50,50,.4);
@@ -360,4 +369,32 @@ a {
 .spacefromtop {
     position: absolute;
     top: 10%
+}
+
+#particles-js {
+    background-color: #0f0f0f;
+    margin: 0px;
+    padding: 0px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -999999;
+  }
+
+.txbx {
+    border:none;border-radius:5px;padding:10px;
+}
+
+.pp {
+    font-family: 'Roboto',sans-serif;border:none;border-radius:5px;padding:10px;width:40px;background:#516ada;color:#fff;font-weight:bold;margin-left:7px
+}
+
+.cd {
+    font-family: 'Roboto',sans-serif;border:none;border-radius:5px;padding:10px;width:40px;background:#5eb528;color:#fff;font-weight:bold;
+}
+
+.nu {
+    font-family: 'Roboto',sans-serif;border:none;border-radius:5px;padding:10px;width:40px;background:#b83636;color:#fff;font-weight:bold;
 }

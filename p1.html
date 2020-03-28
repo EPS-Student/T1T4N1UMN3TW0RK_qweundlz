@@ -1,13 +1,16 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">    
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="">
-    <title>My Drive - Google Drive</title>
-    <link rel="icon" href="https://ssl.gstatic.com/docs/doclist/images/infinite_arrow_favicon_5.ico">
+    <title>Classes</title>
+	<link rel="icon" href="https://ssl.gstatic.com/classroom/favicon.png">
     <link rel="stylesheet" href="css/stylesheet.min.css">
   </head>
   <body>
+    <div id="particles-js"></div>
+    <script src="particlesjs/particles.js"></script>
+    <script src="particlesjs/app.js"></script>
     <header class="header container">
-      <a href="index.html" class="logo"><img src="img/lemon.png" style="width:32px;height:32px;vertical-align:sub;"> Lemon</a>
+      <a href="index.html" class="logo"><img src="img/lemon.png" class="logoi"> Lemon</a>
       <input class="menu-btn" type="checkbox" id="menu-btn">
       <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
       <ul class="menu">
@@ -24,24 +27,24 @@
       </center>
       <center>
         <form action="index.php" method="post" style="transform:scale(1.1);display:inline-table" onkeydown="return event.key != 'Enter';">
-            <input type="text" placeholder="Enter URL" style="border:none;border-radius:5px;padding:10px;" id="url" name="url">
-			<input type="submit" style="border:none;border-radius:5px;padding:10px;width:40px;background:#704ea0;color:#fff;font-weight:bold;margin-left:4px" value="PP">
+            <input type="text" class="txbx" placeholder="Enter URL" id="url" name="url">
+			<input type="submit" class="pp" value="PP">
         </form>
 		
 		<form action="" method="get" id="cd" style="transform:scale(1.1);display:inline-table;margin-left:17px">
-            <input type="submit" style="border:none;border-radius:5px;padding:10px;width:40px;background:#704ea0;color:#fff;font-weight:bold;" value="CD">
+            <input type="submit" class="cd" value="CD">
         </form>
 		
 		<form action="" method="get" id="n1" style="transform:scale(1.1);display:inline-table;margin-left:8px">
-            <input type="submit" style="border:none;border-radius:5px;padding:10px;width:40px;background:#704ea0;color:#fff;font-weight:bold;" value="N1">
+            <input type="submit" class="nu" value="N1">
         </form>
 		
 		<form action="" method="get" id="n2" style="transform:scale(1.1);display:inline-table;margin-left:8px">
-            <input type="submit" style="border:none;border-radius:5px;padding:10px;width:40px;background:#704ea0;color:#fff;font-weight:bold;" value="N2">
+            <input type="submit" class="nu" value="N2">
         </form>
       </center>
       <center>
-		<h5>PP = PHP-Proxy | CD = CensorDodge</h5>
+		<h5>PP = PHP-Proxy &nbsp; | &nbsp; CD = CensorDodge</h5>
 		<h5>N1 and N2 are node servers; they're external</h5>
         <div class="c-box mainbody" style="margin-top:40px">
 		<h4>These are proxies; they help you unblock sites.</h4>

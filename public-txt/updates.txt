@@ -5,4 +5,7 @@ LEMON Complete list of updates since school let out in March.
 3/21/20 - Node Unblocker should be more compatible now,
           Updated Cookie Clicker
 
-3/24/20 - Overhauled Surf Freely UI!
+3/24/20 - Overhauled Surf Freely UI
+
+3/27/20 - Backgrounds Changed to particles.js,
+          Updated Styles
