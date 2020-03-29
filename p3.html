@@ -5,6 +5,7 @@
 	<link rel="icon" href="https://ssl.gstatic.com/classroom/favicon.png">
     <link rel="stylesheet" href="css/stylesheet.min.css">
     <link href="font/fontawesome/css/all.css" rel="stylesheet">
+    <script>function on(){window.onbeforeunload=function(){return true;};}</script><script>function off(){window.onbeforeunload=function(){};}</script><script>function chec(){if(document.getElementById('oubox').checked){on();}else{off();}}</script>
   </head>
   <body>
     <header class="header container">
@@ -12,6 +13,7 @@
       <input class="menu-btn" type="checkbox" id="menu-btn">
       <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
       <ul class="menu">
+        <li><label><input type="checkbox" id="oubox" class="cb" onclick="chec()" /><i></i><span class="oulbl">Close-Warning</span></label></li>
         <li><a href="index.html">Home</a></li>
         <li><a href="p2.html">Games</a></li>
         <li class="current"><a href="p3.html">Movies</a></li>
