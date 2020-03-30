@@ -326,7 +326,7 @@ a {
     font-family: 'Roboto',sans-serif;
     position: relative;
     padding: 20px 40px;
-    background-color: rgba(70,130,180,.15);
+    background-color: rgba(40,40,50,0.4);
     border-top: #00cd00 3px solid;
     border-bottom: #00cd00 3px solid;
     border-left: #00cd00 3px solid;
@@ -339,11 +339,12 @@ a {
     border-radius: .9em
 }
 
-.d-box .gams {
-    background-color: rgba(70,130,180,.4);
+.d-box > a {
+    margin-left: 40%;
 }
 
 .d-box h1 {
+    text-align: center;
     margin: 0 0 12px 0;
     padding: 12px 0;
     font-size: 24px;

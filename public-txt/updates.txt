@@ -13,4 +13,5 @@ LEMON Complete list of updates since school let out in March.
 3/28/20 - TN did an oop :(
 
 3/29/20 - Added Close-Tab-Prevention switch to all headers,
-          PHP-Proxy should work better now
+          PHP-Proxy should work better now (and with youtube.com),
+          Added some games, aligned layout for them
