@@ -57,7 +57,7 @@ html body {
 <div id="container">
 
 	<div style="text-align:center;">
-		<h1 style="color:purple;">Titanium Network Proxy</h1>
+		<h1 style="color:purple;">PHP-Proxy</h1>
     <h1 style="color:purple;">Fallback Page</h1>
                 <h1 style="color:green;">Local PHP-Proxy</h1>
 		<h3 style="color:blue;">Using the titaniumnetwork proxy will allow you to anonymously visit any site you wish. Due to its anonymous nature, you can even unblock websites that are blocked by school and work firewalls!</h3>
@@ -99,7 +99,7 @@ html body {
 		<h3 style="color:green;">And many more!</h3>
 	    </div
 <div id="footer">
-	Powered by <a href="#" target="_blank">TitaniumNetwork</a>
+	Powered by <a href="#" target="_blank">PHP-Proxy</a>
 </div>
 
 
