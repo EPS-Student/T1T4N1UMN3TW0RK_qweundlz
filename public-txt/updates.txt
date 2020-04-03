@@ -1,19 +1,21 @@
 LEMON Complete list of updates since school let out in March.
 
-3/17/20 - We now have domains! (Still using heroku)
+03/17/20 - We now have domains! (Still using heroku)
 
-3/21/20 - Node Unblocker should be more compatible now,
-          Updated Cookie Clicker
+03/21/20 - Node Unblocker should be more compatible now,
+           Updated Cookie Clicker
 
-3/24/20 - Overhauled Surf Freely UI
+03/24/20 - Overhauled Surf Freely UI
 
-3/27/20 - Backgrounds Changed to particles.js,
-          Updated Styles
+03/27/20 - Backgrounds Changed to particles.js,
+           Updated Styles
 
-3/28/20 - TN did an oop :(
+03/28/20 - TN did an oop :(
 
-3/29/20 - Added Close-Tab-Prevention switch to all headers,
-          PHP-Proxy should work better now (and with youtube.com),
-          Added some games, aligned layout for them
+03/29/20 - Added Close-Tab-Prevention switch to all headers,
+           PHP-Proxy should work better now (and with youtube.com),
+           Added some games, aligned layout for them
 
-3/31/20 - Added shortcuts to Surf Freely
+03/31/20 - Added shortcuts to Surf Freely
+
+04/03/20 - Updated Styles
