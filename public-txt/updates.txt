@@ -19,3 +19,7 @@ LEMON Complete list of updates since school let out in March.
 03/31/20 - Added shortcuts to Surf Freely
 
 04/03/20 - Updated Styles
+
+04/04/20 - Added Chatbox,
+           Updated Styles,
+           Some new layout
