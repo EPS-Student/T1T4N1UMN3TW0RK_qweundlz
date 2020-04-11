@@ -4,6 +4,7 @@
     <title>Classes</title>
 	<link rel="icon" href="https://ssl.gstatic.com/classroom/favicon.png">
     <link rel="stylesheet" href="css/stylesheet.min.css">
+    <link href="font/fontawesome/css/all.css" rel="stylesheet">
     <script>function on(){window.onbeforeunload=function(){return true;};}</script><script>function off(){window.onbeforeunload=function(){};}</script><script>function chec(){if(document.getElementById('oubox').checked){on();}else{off();}}</script>
   </head>
   <body>
@@ -44,12 +45,16 @@
             <div class="pitm"><input type="submit" class="pbn nu" value="NU"></div>
         </form>
 
+        <form action="" method="get" id="pd" class="bfm">
+            <div class="pitm"><input type="submit" class="pbn pd" value="??"></div>
+        </form>
+
         </div>
         </center>
       </center>
       <center>
-		<h5><span class="cpp">PP</span> = PHP-Proxy &nbsp; | &nbsp; <span class="ccd">CD</span> = CensorDodge</h5>
-		<h5><span class="cnu">NU</span> = Node Unblocker</h5>
+		<h5><span class="cpp">PP</span> = PHP-Proxy &nbsp;<i class="lanl fab fa-php"></i>&nbsp; | &nbsp; <span class="ccd">CD</span> = CensorDodge &nbsp;<i class="lanl fab fa-php"></i></h5>
+		<h5><span class="cnu">NU</span> = Node Unblocker &nbsp;<i class="lanl fab fa-node-js"></i>&nbsp; | &nbsp; <span class="cpd">??</span> = Coming Soon! &nbsp;<i class="lanl fab fa-python"></i></h5>
         <div class="c-box mainbody" style="margin-top:40px !important; margin-bottom: 20px;">
 		<h4>These are proxies; they help you unblock sites.</h4>
 		<h4>Certain sites may work with some proxies, while others with different proxies.</h4>
@@ -90,8 +95,10 @@
     }
     $('nu').onsubmit = function() {
       var url = $('url').value;
+      var det = document.domain;
+      var domain = det.replace('www.','').split(/[/?#]/)[0];
       //this is the URL for the server
-      window.location.href = "https://nu." + document.domain + "/textbooks/" + url;
+      window.location.href = "https://nu." + domain + "/textbooks/" + url;
       return false;
     };
     window.onload = function() {

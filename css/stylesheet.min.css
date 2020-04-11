@@ -146,36 +146,38 @@ ul {
     cursor: pointer;
     display: inline-block;
     float: right;
-    padding: 28px 20px;
+    padding: 32px 28px;
     position: relative;
     user-select: none
 }
 
 .header .menu-icon .navicon {
-    background: #333;
+    background: #696;
     display: block;
-    height: 2px;
+    height: 3px;
     position: relative;
-    transition: background .2s ease-out;
-    width: 18px
+    transition: background .2s ease;
+    width: 24px;
+    border-radius: 1.5px
 }
 
 .header .menu-icon .navicon:after,.header .menu-icon .navicon:before {
-    background: #333;
+    background: #696;
     content: '';
     display: block;
     height: 100%;
     position: absolute;
-    transition: all .2s ease-out;
-    width: 100%
+    transition: all .2s ease;
+    width: 100%;
+    border-radius: 1.5px
 }
 
 .header .menu-icon .navicon:before {
-    top: 5px
+    top: 8px
 }
 
 .header .menu-icon .navicon:after {
-    top: -5px
+    top: -8px
 }
 
 .header .menu-btn {
@@ -183,7 +185,7 @@ ul {
 }
 
 .header .menu-btn:checked~.menu {
-    max-height: 240px
+    max-height: 460px
 }
 
 .header .menu-btn:checked~.menu-icon .navicon {
@@ -202,7 +204,7 @@ ul {
     top: 0
 }
 
-@media (min-width: 48em) {
+@media (min-width: 72em) {
     .header li {
         float:left
     }
@@ -237,22 +239,6 @@ ul {
     padding-right: 30px;
     padding-left: 30px;
     margin: 20px;
-}
-
-.slide_down:hover {
-    box-shadow: inset 0 100px 0 0 Green
-}
-
-.slide_right:hover {
-    box-shadow: inset 400px 0 0 0 Green
-}
-
-.slide_left:hover {
-    box-shadow: inset 0 0 0 50px Green
-}
-
-.slide_diagonal:hover {
-    box-shadow: inset 400px 50px 0 0 Green
 }
 
 .change_color:hover {
@@ -399,11 +385,11 @@ a {
     outline: none;
 }
 
-.pp:hover, .cd:hover, .nu:hover {
+.pp:hover, .cd:hover, .nu:hover, .pd:hover {
     cursor: pointer;
 }
 
-.pp:focus, .cd:focus, .nu:focus {
+.pp:focus, .cd:focus, .nu:focus, .pd:focus {
     outline: none;
 }
 
@@ -422,16 +408,36 @@ a {
     transition: box-shadow 0.2s;
 }
 
+.pd:focus {
+    box-shadow: 0px 0px 0px 3px rgba(63,63,63,0.5);
+    transition: box-shadow 0.2s;
+}
+
+.pbn {
+    font-family: 'Roboto',sans-serif;
+    border:none;
+    border-radius:5px;
+    padding:10px;
+    width:40px;
+    color:#fff;
+    font-weight:bold;
+    transition: box-shadow 0.2s;
+}
+
 .pp {
-    font-family: 'Roboto',sans-serif;border:none;border-radius:5px;padding:10px;width:40px;background:#617cbe;color:#fff;font-weight:bold;transition: box-shadow 0.2s;margin-left:0px;margin-right:3px;
+    background:#617cbe;margin-left:0px;margin-right:3.5px;
 }
 
 .cd {
-    font-family: 'Roboto',sans-serif;border:none;border-radius:5px;padding:10px;width:40px;background:#5eb528;color:#fff;font-weight:bold;transition: box-shadow 0.2s;
+    background:#5eb528;
 }
 
 .nu {
-    font-family: 'Roboto',sans-serif;border:none;border-radius:5px;padding:10px;width:40px;background:#b83636;color:#fff;font-weight:bold;transition: box-shadow 0.2s;
+    background:#b83636;
+}
+
+.pd {
+    background:#3f3f3f;
 }
 
 .cpp {
@@ -444,6 +450,16 @@ a {
 
 .cnu {
     background:#b83636;border-radius:2.5px;padding:3px 4px;
+}
+
+.cpd {
+    background:#3f3f3f;border-radius:2.5px;padding:3px 4px;
+}
+
+.lanl {
+    font-weight: normal;
+    font-size: 160%;
+    vertical-align: sub;
 }
 
 .bfm {
