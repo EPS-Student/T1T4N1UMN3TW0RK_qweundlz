@@ -29,26 +29,27 @@
         <h1 style="margin-bottom:28px">Surf Freely</h1>
       </center>
       <center>
-        <form action="geographic/index.php" method="post" style="transform:scale(1.1);display:inline-table" onkeydown="return event.key != 'Enter';">
-            <input type="text" class="txbx" placeholder="Enter URL" id="url" name="url">
-			<input type="submit" class="pp" value="PP">
+        <div class="butses">
+
+        <form action="geographic/index.php" method="post" style="transform:scale(1.1);display:inline-table;margin-right:5px" onkeydown="return event.key != 'Enter';">
+            <div class="pitm"><input type="text" class="txbx" placeholder="Enter URL" id="url" name="url" spellcheck="false"></div>
+            <div class="pitm"><input type="submit" class="pbn pp" value="PP"></div>
         </form>
 		
-		<form action="" method="get" id="cd" style="transform:scale(1.1);display:inline-table;margin-left:17px">
-            <input type="submit" class="cd" value="CD">
+		    <form action="" method="get" id="cd" class="bfm">
+            <div class="pitm"><input type="submit" class="pbn cd" value="CD"></div>
         </form>
 		
-		<form action="" method="get" id="n1" style="transform:scale(1.1);display:inline-table;margin-left:8px">
-            <input type="submit" class="nu" value="N1">
+		    <form action="" method="get" id="nu" class="bfm">
+            <div class="pitm"><input type="submit" class="pbn nu" value="NU"></div>
         </form>
-		
-		<form action="" method="get" id="n2" style="transform:scale(1.1);display:inline-table;margin-left:8px">
-            <input type="submit" class="nu" value="N2">
-        </form>
+
+        </div>
+        </center>
       </center>
       <center>
 		<h5><span class="cpp">PP</span> = PHP-Proxy &nbsp; | &nbsp; <span class="ccd">CD</span> = CensorDodge</h5>
-		<h5><span class="cnu">N1</span> and <span class="cnu">N2</span> are node servers; they're external</h5>
+		<h5><span class="cnu">NU</span> = Node Unblocker</h5>
         <div class="c-box mainbody" style="margin-top:40px !important; margin-bottom: 20px;">
 		<h4>These are proxies; they help you unblock sites.</h4>
 		<h4>Certain sites may work with some proxies, while others with different proxies.</h4>
@@ -84,33 +85,19 @@
       }
     </script>
     <script>
-      function $(id) {
-        return document.getElementById(id);
-      }
-      $('n1').onsubmit = function() {
-        var url = $('url').value;
-        //this is the URL for the server
-        window.location.href = `https://mundane-cube.cf/textbooks/${url}`;
-        return false;
-      };
-      window.onload = function() {
-        $('url').focus();
-      }
-  </script>
-  <script>
-      function $(id) {
-        return document.getElementById(id);
-      }
-      $('n2').onsubmit = function() {
-        var url = $('url').value;
-        //this is the URL for the server
-        window.location.href = `https://do-not-please.ga/textbooks/${url}`;
-        return false;
-      };
-      window.onload = function() {
-        $('url').focus();
-      }
-  </script>
+    function $(id) {
+      return document.getElementById(id);
+    }
+    $('nu').onsubmit = function() {
+      var url = $('url').value;
+      //this is the URL for the server
+      window.location.href = "https://nu." + document.domain + "/textbooks/" + url;
+      return false;
+    };
+    window.onload = function() {
+      $('url').focus();
+    }
+    </script>
   </div>
         
         

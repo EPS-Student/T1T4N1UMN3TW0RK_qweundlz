@@ -23,3 +23,6 @@ LEMON Complete list of updates since school let out in March.
 04/04/20 - Added Chatbox,
            Updated Styles,
            Some new layout
+
+04/11/20 - Updated Styles,
+           Node servers are now local
