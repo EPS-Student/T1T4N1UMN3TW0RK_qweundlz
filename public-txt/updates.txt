@@ -26,3 +26,6 @@ LEMON Complete list of updates since school let out in March.
 
 04/11/20 - Updated Styles,
            Node servers are now local
+
+04/12/20 - Some minor changes,
+           Sites are now obfuscated
