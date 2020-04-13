@@ -1,3 +1,4 @@
 RewriteEngine on
 DirectoryIndex index.html
 ErrorDocument 404 /404.html
+Header set X-XSS-Protection "1; mode=block"
