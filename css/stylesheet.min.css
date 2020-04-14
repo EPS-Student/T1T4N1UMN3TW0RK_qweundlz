@@ -224,6 +224,10 @@ ul {
     }
 }
 
+button {
+	outline: none;
+}
+
 .button_slide {
     color: #fff;
     border-radius: .9em;
@@ -550,4 +554,22 @@ a {
     float: right;
     height: 1.2em;
     margin: 2px;
+}
+
+.codyee {
+	text-align: left;
+	font-family:Courier,sans-serif;
+	margin-left: 15%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#bk1, #bk2, #bk3, #bk4 {
+	margin-bottom: 20px;
+}
+
+.monoindent {
+	text-align: left;
+	font-family:Courier,sans-serif;
+	margin-left: 30%;
 }
