@@ -570,3 +570,20 @@ label > input:checked + i:after {
 	font-family:Courier,sans-serif;
 	margin-left: 30%;
 }
+
+footer {
+	font: 12px sans-serif;
+    background-color: rgba(25,25,25, 0.5);
+    position: fixed;
+    width: 100%;
+	box-align: center;
+    z-index: 1;
+	bottom: 0;
+    animation-name: none;
+	padding: 2px 4px 4px 4px;
+	text-align: center;
+}
+
+footer a {
+	color: #DDD;
+}
