@@ -345,7 +345,8 @@ a {
   }
 
 .textbox {
-    border:none;border-radius:5px;padding:10px;height:16px;
+    z-index:999999999999999;
+	border:none;border-radius:5px;padding:10px;height:16px;
     transition: box-shadow 0.2s;
 }
 
@@ -384,7 +385,8 @@ a {
 }
 
 .pbn {
-    font-family: 'Roboto',sans-serif;
+    z-index:999999999999999;
+	font-family: 'Roboto',sans-serif;
     font-size: 1.2em;
     border:none;
     border-radius:5px;
@@ -569,6 +571,12 @@ label > input:checked + i:after {
 	text-align: left;
 	font-family:Courier,sans-serif;
 	margin-left: 30%;
+}
+
+.pform {
+	z-index:999999999999999;
+	transform:scale(1.1);
+	display:inline-table
 }
 
 footer {
