@@ -2,6 +2,7 @@
 bks.html
 changelog.html
 chat.html
+if.html
 index.html
 p1.html
 p2.html
