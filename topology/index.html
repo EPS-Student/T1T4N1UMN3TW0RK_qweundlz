@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#p-iframe {
+	position:fixed;
+	height:100%;
+	width:100%;
+	border-style:none;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+}
+</style>
+</head>
+<body>
+<iframe src="https://bing.com" id="p-iframe" name="cstage" onload="document.title=parent.frames['cframe'].document.title;"></iframe>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+    $( "p-iframe" ).on('load',function() {
+        document.title = document.getElementById("p-iframe").contentDocument.title;
+    });
+</script>
+</body>
+</html>
