@@ -10,3 +10,4 @@ p2f.html
 p3.html
 p3f.html
 yhp.html
+batch.py [deobf]
